@@ -1,6 +1,5 @@
-const dna = ['G', 'C', 'T', 'A'];
-const rna = ['C', 'G', 'A', 'U'];
+const dictionary = {G: 'C' , C: 'G', T: 'A', A: 'U'};
 
 export const toRna = (input) => {
-  return input.replace(/[GCTA]/g, x => rna[dna.indexOf(x)]);
+  return input.split('').map(x => dictionary[x] || x).join('');
 };
